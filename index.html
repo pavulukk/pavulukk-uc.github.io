@@ -373,9 +373,65 @@
         <div>
         <p id="p1">Hover the mouse over the sentence.</p>
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <div id="quoteContainer"></div>
-        <div id="jokeContainer"></div>
+		
+	<div id="output"></div>
+
+    <script>
+        async function fetchRandomContent() {
+            const url = 'https://quotes15.p.rapidapi.com/quotes/random/';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': '76d3917378mshff568fed8e12a08p136191jsnb9cb215f94ac',
+                    'X-RapidAPI-Host': 'quotes15.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json();
+                const output = document.getElementById('output');
+                output.innerHTML += "<p><strong>Random Quote:</strong> " + result.content + "</p>";
+            } catch (error) {
+                console.error(error);
+            }
+        }
         
+        // Call the function to fetch a random quote when the page loads
+        fetchRandomContent();
+    </script>
+        
+    
+    
+    
+    <div id="jokeContainer"></div>
+
+    <script>
+        async function fetchChuckNorrisJoke() {
+            const url = 'https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random';
+            const options = {
+                method: 'GET',
+                headers: {
+                    accept: 'application/json',
+                    'X-RapidAPI-Key': '76d3917378mshff568fed8e12a08p136191jsnb9cb215f94ac',
+                    'X-RapidAPI-Host': 'matchilling-chuck-norris-jokes-v1.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json();
+                const jokeContainer = document.getElementById('jokeContainer');
+                jokeContainer.textContent = result.value; // Assuming the joke text is stored in the "value" property
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        // Call the function to fetch Chuck Norris joke when the page loads
+        fetchChuckNorrisJoke();
+    </script>
+	
         <script>
             function setCookie(name, value, days) {
                 var expires = "";
