@@ -14,3 +14,7 @@
 
 
 ![Karthik's Headshot](img/IMG_6862-01_11zon.jpeg){ width=300 height=200 }
+
+
+
+![Screenshot 1](img/Screenshot(72).png)
