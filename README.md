@@ -14,7 +14,7 @@
 
 
 
-![Karthik's Headshot](img/IMG_6862-01_11zon.jpeg){ width=300 height=200 }
+<img src="img/IMG_6862-01_11zon.jpeg" width=550 height=800>
 
 
 
