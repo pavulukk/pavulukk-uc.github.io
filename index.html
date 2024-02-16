@@ -21,7 +21,7 @@
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="style.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script>
             $(document).ready(function(){
@@ -327,9 +327,7 @@
         <script src="lib/lightbox/js/lightbox.min.js"></script>
         
         <!-- Template Javascript -->
-        <script src="main.js"></script>
-	<div id="quoteContainer"></div>
-	<div id="jokeContainer"></div>
+        <script src="js/main.js"></script>
         <div>
             <a href="https://info.flagcounter.com/IXwx"><img src="https://s11.flagcounter.com/count2/IXwx/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
         </div>
@@ -372,14 +370,57 @@
 	            }
             }
         </script>
+        <div>
         <p id="p1">Hover the mouse over the sentence.</p>
-	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-	<script>
-		$.get("https://v2.jokeapi.dev/joke/Programming?type=single",
-			function(result) {
-				console.log("From jokeAPI: "+ JSON.stringify(result));
-				$("#response").html("A programming joke of the day: " + result.joke);
-			})
-	</script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <div id="quoteContainer"></div>
+        <div id="jokeContainer"></div>
+        
+        <script>
+            function setCookie(name, value, days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + value + expires + "; path=/";
+            }
+        
+            function getCookie(name) {
+                var nameEQ = name + "=";
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i];
+                    while (cookie.charAt(0) === ' ') {
+                        cookie = cookie.substring(1, cookie.length);
+                    }
+                    if (cookie.indexOf(nameEQ) === 0) {
+                        return cookie.substring(nameEQ.length, cookie.length);
+                    }
+                }
+                return null;
+            }
+        
+            function displayWelcomeMessage() {
+                var lastVisit = getCookie("lastVisit");
+        
+                if (lastVisit === null) {
+                    // First time visit
+                    alert("Welcome to my homepage!");
+                } else {
+                    // Returning visit
+                    alert("Welcome back! Your last visit was " + lastVisit);
+                }
+        
+                // Set or update the cookie for the current visit
+                var currentDate = new Date().toLocaleString();
+                setCookie("lastVisit", currentDate, 30); // Cookie expires in 30 days
+            }
+        
+            // Display welcome message on page load
+            displayWelcomeMessage();
+        </script>
+        
     </body>
 </html>
