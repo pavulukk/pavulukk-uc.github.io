@@ -49,6 +49,20 @@
 -- analog clock
 -- Email onclick
 -- I also added the hover to the sentence, so that it displays a error message with the information provided.
+
+
 ![Screenshot 7](img/Screenshot%20(78).png)
+
+- In Screeshot-7, I added to web `API` with the `HTML` file using the `script` tags.
+- Firstly, I used a public API called `Quotes` which generated random codes for every one second or new refresh.
+- Secondly, I used a public API called `ChuckNorris` jokes which generates random jokes by a man called norris.
+
+
 ![Screenshot 8](img/Screenshot%20(80).png)
+
+- Screenshot-8 is about the `Javascript` cookie that is displaying the alert when the user visited the page for the first time.
+
+
 ![Screenshot 9](img/Screenshot%20(81).png)
+
+- Screenshot-9 is about the `Javascript` cookie that is displaying the alert when the user returned and theirs previous visit with time and date.
