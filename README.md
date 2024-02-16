@@ -14,7 +14,7 @@
 
 
 
-<img src="img/IMG_6862-01_11zon.jpeg" width=550 height=800>
+<img src="img/IMG_6862-01_11zon.jpeg" width=275 height=400>
 
 
 
